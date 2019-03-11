@@ -142,7 +142,7 @@ passwd USERNAME
 EDITOR=vim visudo
 ```
 
-Using `:/<pattarn>`, find `# %wheel ALL=(ALL) ALL`, and uncomment it.
+Using `:/<pattern>`, find `# %wheel ALL=(ALL) ALL`, and uncomment it.
 
 ## Install Audion, DMS, DM and WM of your choosing
 
