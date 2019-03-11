@@ -144,7 +144,7 @@ EDITOR=vim visudo
 
 Using `:/<pattern>`, find `# %wheel ALL=(ALL) ALL`, and uncomment it.
 
-## Install Audion, DMS, DM and WM of your choosing
+## Install Audio, DMS, DM and WM of your choosing
 
 ```bash
 pacman -S pulseaudio pulseaudio-alsa xorg xorg-xinit xorg-server
