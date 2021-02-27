@@ -1,0 +1,34 @@
+version: "3.7"
+
+services:
+  db:
+    image: "postgres:13.1-alpine"
+    restart: "always"
+    container_name: hap-be-db
+    ports:
+      - target: 5432
+        published: 5432
+        protocol: tcp
+        mode: host
+    environment:
+      POSTGRES_DB: "hap_be_db"
+      POSTGRES_USER: "storm"
+      POSTGRES_PASSWORD: "password"
+    networks:
+      backend:
+        aliases:
+          - be-db
+  redis:
+    image: redis:alpine
+    volumes:
+      - ./config/redis.conf:/redis.conf
+    command: [ "redis-server", "/redis.conf" ]
+    ports:
+      - 6379:6379
+    networks:
+      backend:
+        aliases:
+          - redis
+networks:
+  backend:
+    name: "backend-network"
